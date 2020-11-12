@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    input:not(.qwe) {
+        color: blue;
+        width: 30px;
+        height: 30px;
+    }
+    form{
+        border: 2px solid;
+        width: 180px;
+    }
+</style>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td colspan="4"><input class="qwe" type="text" id="screen" value="0" style="text-align: right; color: blue"></td>
+            </tr>
+            <tr>
+                <td><input class="nunber" type="button" value="1" onclick="onscreen(1)"></td>
+                <td><input class="nunber" type="button" value="2" onclick="onscreen(2)"></td>
+                <td><input class="nunber" type="button" value="3" onclick="onscreen(3)"></td>
+                <td><input class="math" type="button" value="+"   onclick="onscreen('+')"></td>
+            </tr>
+            <tr>
+                <td><input class="nunber" type="button" value="4" onclick="onscreen(4)"></td>
+                <td><input class="nunber" type="button" value="5" onclick="onscreen(5)"></td>
+                <td><input class="nunber" type="button" value="6" onclick="onscreen(6)"></td>
+                <td><input class="math" type="button" value="-"   onclick="onscreen('-')"></td>
+            </tr>
+            <tr>
+                <td><input class="nunber" type="button" value="7" onclick="onscreen(7)"></td>
+                <td><input class="nunber" type="button" value="8" onclick="onscreen(8)"></td>
+                <td><input class="nunber" type="button" value="9" onclick="onscreen(9)"></td>
+                <td><input class="math" type="button" value="x"   onclick="onscreen('*')"></td>
+            </tr>
+            <tr>
+                <td><input class="reset" type="button" value="C" onclick="resetcal()"></td>
+                <td><input class="nunber" type="button" value="0" onclick="onscreen(0)"></td>
+                <td><input class="caculate" type="button" value="=" onclick="math()"></td>
+                <td><input class="math" type="button" value="/" onclick="onscreen('/')"></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        let inp = document.getElementById('screen');
+        function onscreen(value) {
+            if ( inp.value == 0) {
+                inp.value = value;
+            }
+            else
+                inp.value += value;
+        }
+        function resetcal() {
+            inp.value = 0;
+        }
+        function math() {
+            inp.value = eval(inp.value);
+        }
+    </script>
+</body>
+</html>
